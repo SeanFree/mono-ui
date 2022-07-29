@@ -1,0 +1,25 @@
+{
+  "name": "mono-ui",
+  "version": "0.0.1",
+  "description": "React component library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "React",
+    "Component",
+    "Library",
+    "TypeScript"
+  ],
+  "author": "Sean Free",
+  "license": "ISC",
+  "dependencies": {
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/prop-types": "^15.7.5",
+    "@types/react": "^18.0.15"
+  }
+}
