@@ -1,0 +1,40 @@
+@import 'styles/color.scss', 'styles/font.scss', 'styles/size.scss';
+
+$headingFontSizes: (
+  h1: $size13,
+  h2: $size12,
+  h3: $size11,
+  h4: $size10,
+  h5: $size9,
+  h6: $size8,
+);
+
+.mono-heading {
+  color: $colorFont1;
+  font-family: $fontFamily;
+  font-weight: 600;
+  padding: $size5 0;
+  position: relative;
+  margin: 0 0 $size5;
+  text-shadow: 0 0 $size0 transparentize($colorBackground0, 0.15);
+
+  @each $tag, $size in $headingFontSizes {
+    &--#{$tag} {
+      font-size: $size;
+    }
+  }
+
+  &__sub-text {
+    display: block;
+    height: 0;
+    bottom: -$size2;
+    font-size: $size5;
+    font-style: italic;
+    left: 0;
+    color: $colorFont4;
+    padding-left: $size1;
+    position: relative;
+    white-space: nowrap;
+    width: 100%;
+  }
+}

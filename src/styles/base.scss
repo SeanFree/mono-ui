@@ -1,0 +1,24 @@
+@import './color.scss', './font.scss', './size.scss';
+
+* {
+  box-sizing: border-box;
+  line-height: 1;
+
+  &::selection {
+    background: $colorHighlight0;
+    color: $colorBackground2;
+    text-shadow: 0 0 $size0 transparentize($colorBackground0, 0.15);
+  }
+}
+
+html,
+body {
+  background: $colorBackground1;
+  color: $colorFont5;
+  font-family: $fontFamily;
+  font-size: 16px;
+  font-smooth: auto;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 300;
+  height: 100vh;
+}

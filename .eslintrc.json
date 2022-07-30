@@ -3,18 +3,21 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "plugins": ["@typescript-eslint", "import", "prettier", "react"],
   "env": {
     "browser": true,
-    "jasmine": true,
     "jest": true
   },
   "rules": {
     "@typescript-eslint/no-explicit-any": "off"
   },
   "settings": {
+    "import/resolver": {
+      "typescript": {}
+    },
     "react": {
       "pragma": "React",
       "version": "detect"

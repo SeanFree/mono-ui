@@ -1,0 +1,3 @@
+@mixin focusHighlight($size, $color, $transparency) {
+  outline: $size solid transparentize($color, $transparency);
+}

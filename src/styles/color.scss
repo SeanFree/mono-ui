@@ -1,0 +1,28 @@
+$colorBase: hsl(196, 50%, 50%);
+
+$colorBackground0: darken(saturate($colorBase, 35%), 55%);
+$colorBackground1: darken(saturate($colorBase, 35%), 45%);
+$colorBackground2: darken(saturate($colorBase, 35%), 40%);
+$colorBackground3: darken(saturate($colorBase, 35%), 35%);
+$colorBackground4: darken(saturate($colorBase, 35%), 30%);
+$colorBackground5: darken(saturate($colorBase, 35%), 25%);
+$colorBackground6: darken(saturate($colorBase, 35%), 20%);
+$colorBackground7: darken(saturate($colorBase, 35%), 15%);
+
+$colorHighlight0: lighten(saturate($colorBase, 85%), 25%);
+$colorHighlight1: lighten(saturate($colorBase, 85%), 30%);
+$colorHighlight2: lighten(saturate($colorBase, 85%), 35%);
+$colorHighlight3: lighten(saturate($colorBase, 85%), 40%);
+$colorHighlight4: lighten(saturate($colorBase, 85%), 45%);
+$colorHighlight5: lighten(saturate($colorBase, 85%), 50%);
+$colorHighlight6: lighten(saturate($colorBase, 85%), 55%);
+$colorHighlight7: lighten(saturate($colorBase, 85%), 60%);
+
+$colorFont0: lighten(saturate($colorBase, 35%), 15%);
+$colorFont1: lighten(saturate($colorBase, 35%), 20%);
+$colorFont2: lighten(saturate($colorBase, 35%), 25%);
+$colorFont3: lighten(saturate($colorBase, 35%), 30%);
+$colorFont4: lighten(saturate($colorBase, 35%), 35%);
+$colorFont5: lighten(saturate($colorBase, 35%), 40%);
+$colorFont6: lighten(saturate($colorBase, 35%), 45%);
+$colorFont7: lighten(saturate($colorBase, 35%), 50%);

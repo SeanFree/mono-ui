@@ -1,0 +1,124 @@
+@import 'styles/color.scss', 'styles/font.scss', 'styles/mixins.scss',
+  'styles/size.scss';
+
+.mono-button {
+  align-items: center;
+  backdrop-filter: blur($size3);
+  border-radius: $size2;
+  border: $size0 solid transparentize($colorBackground4, 0.25);
+  color: $colorFont5;
+  cursor: pointer;
+  display: flex;
+  font-family: $fontFamily;
+  font-weight: 300;
+  margin-bottom: $size3;
+  padding: $size3;
+  text-shadow: 0 0 $size0 transparentize($colorBackground0, 0.15);
+  vertical-align: middle;
+
+  &:focus {
+    @include focusHighlight($size0, $colorHighlight0, 0.35);
+  }
+
+  &--inline {
+    display: inline-flex;
+    margin: 0 $size2;
+
+    .mono-icon {
+      margin-right: 0;
+    }
+  }
+
+  &--small {
+    font-size: $size5;
+    padding: $size2;
+
+    &:active {
+      transform: scale(0.9825);
+    }
+  }
+
+  &--medium {
+    font-size: $size6;
+    padding: $size3;
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  &--large {
+    font-size: $size7;
+    padding: $size4;
+
+    &:active {
+      transform: scale(0.975);
+    }
+  }
+
+  &--round {
+    &.mono-button--small {
+      border-radius: $size5 + $size2;
+      padding-left: $size5;
+      padding-right: $size5;
+    }
+
+    &.mono-button--medium {
+      border-radius: $size6 + $size3;
+      padding-left: $size6;
+      padding-right: $size6;
+    }
+
+    &.mono-button--large {
+      border-radius: $size7 + $size4;
+      padding-left: $size7;
+      padding-right: $size7;
+    }
+  }
+
+  &--fill {
+    background: transparentize($colorBackground4, 0.25);
+    border-color: transparentize($colorBackground4, 0.25);
+
+    &:hover {
+      background: transparentize($colorBackground5, 0.25);
+    }
+  }
+
+  &--outline {
+    background: transparent;
+    border: $size0 solid transparentize($colorBackground5, 0.25);
+
+    &:hover {
+      background: transparentize($colorBackground4, 0.25);
+    }
+  }
+
+  &--link {
+    background: transparent;
+    border: $size0 solid transparent;
+    color: $colorFont2;
+    text-decoration: underline;
+    text-decoration-thickness: $size0;
+    text-underline-position: under;
+
+    &:hover {
+      color: $colorFont3;
+      text-decoration: none;
+    }
+
+    &:active,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &--disabled {
+    color: desaturate($colorFont1, 100%);
+    cursor: not-allowed;
+
+    &:hover {
+      color: desaturate($colorFont1, 100%);
+    }
+  }
+}
