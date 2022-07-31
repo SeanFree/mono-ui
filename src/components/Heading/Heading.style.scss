@@ -16,7 +16,6 @@ $headingFontSizes: (
   padding: $size5 0;
   position: relative;
   margin: 0 0 $size5;
-  text-shadow: 0 0 $size0 transparentize($colorBackground0, 0.15);
 
   @each $tag, $size in $headingFontSizes {
     &--#{$tag} {

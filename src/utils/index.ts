@@ -41,3 +41,5 @@ export const classNames = (classConfig: ClassConfig | string[]) => {
 }
 
 export const noop = (): void => {}
+
+export const nearestMultiple = (n: number, d: number): number => n - (n % d)

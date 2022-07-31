@@ -2,7 +2,7 @@ import { ComponentStory } from '@storybook/react'
 import IconButton from './IconButton'
 
 export default {
-  title: 'IconButton',
+  title: 'Controls/IconButton',
   component: IconButton,
 }
 

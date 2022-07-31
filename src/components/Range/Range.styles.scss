@@ -1,0 +1,129 @@
+@import 'styles/color.scss', 'styles/mixins.scss', 'styles/size.scss';
+
+.mono-range {
+  position: relative;
+
+  &__label {
+    display: block;
+  }
+
+  &__slider {
+    position: relative;
+    height: $size11;
+    width: 100%;
+  }
+
+  &--label-right &__slider {
+    margin-right: $size3;
+  }
+
+  &__track {
+    background: $colorBackground5;
+    border-radius: $size1;
+    left: 50%;
+    position: relative;
+    height: $size2;
+    overflow: hidden;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+
+  &__fill {
+    background: $colorFont0;
+    background-color: $colorFont0;
+    border-radius: $size1;
+    height: 100%;
+    position: absolute;
+    transform-origin: left center;
+    width: 100%;
+  }
+
+  &__thumb {
+    background-color: $colorHighlight2;
+    border-radius: 50%;
+    cursor: ew-resize;
+    height: $size6;
+    position: absolute;
+    top: 0.575rem;
+    transform: translateX(-50%);
+    transform-origin: center center;
+    user-select: none;
+    width: $size6;
+
+    &:focus {
+      @include focusHighlight($size1, $colorHighlight0, 0.35);
+    }
+
+    &:active {
+      transform: translateX(-50%) scale(0.975);
+    }
+  }
+
+  &__thumb-display {
+    background: $colorBackground5;
+    border-radius: $size1;
+    font-size: $size4;
+    left: 50%;
+    opacity: 0;
+    padding: $size1;
+    pointer-events: none;
+    position: absolute;
+    text-align: center;
+    top: -$size9;
+    transform-origin: center bottom;
+    transform: translate(-50%, 25%);
+    transition: opacity 0.2s, transform 0.2s;
+    user-select: none;
+  }
+
+  &__slider:hover &__thumb-display,
+  &__thumb:focus &__thumb-display {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+
+  &__limit {
+    display: inline-block;
+    font-size: $size4;
+    position: absolute;
+    pointer-events: none;
+    top: $size9;
+  }
+
+  &--hide-limits &__limit {
+    display: none;
+  }
+
+  &__min {
+    left: 0;
+    top: 100%;
+    text-align: left;
+  }
+
+  &__max {
+    right: 0;
+    top: 100%;
+    text-align: right;
+  }
+
+  &--disabled {
+    pointer-events: none;
+  }
+
+  &--disabled &__track {
+    background-color: desaturate($colorBackground5, 85%);
+  }
+
+  &--disabled &__fill {
+    background-color: desaturate($colorFont0, 85%);
+  }
+
+  &--disabled &__thumb {
+    background-color: desaturate($colorHighlight2, 85%);
+  }
+
+  &--disabled &__thumb-display {
+    background-color: desaturate($colorBackground5, 85%);
+  }
+}

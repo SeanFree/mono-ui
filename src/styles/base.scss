@@ -7,7 +7,6 @@
   &::selection {
     background: $colorHighlight0;
     color: $colorBackground2;
-    text-shadow: 0 0 $size0 transparentize($colorBackground0, 0.15);
   }
 }
 

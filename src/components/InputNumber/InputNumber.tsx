@@ -42,12 +42,9 @@ const InputNumber: FC<InputNumberProps> = ({
 }) => {
   const [value, setValue] = useState<number | string>(defaultValue || min)
   const [cursor, setCursor] = useState<number>(0)
+  const decimal = useMemo(() => +String(step).split('.')[1]?.length, [step])
   const updateInterval = useRef<number | undefined>()
   const updateTimeout = useRef<number | undefined>()
-  const decimal = useMemo(
-    () => step?.toString().split('.')[1]?.length || 0,
-    [step]
-  )
   const input = useRef<HTMLInputElement>(null)
   const btnDecrement = useRef()
   const btnIncrement = useRef()

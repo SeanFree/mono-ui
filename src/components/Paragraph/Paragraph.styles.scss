@@ -4,7 +4,6 @@
   font-size: $size6;
   font-weight: 300;
   margin-bottom: $size6;
-  text-shadow: 0 0 $size0 transparentize($colorBackground0, 0.15);
 
   &--dropcap:first-letter {
     color: $colorFont1;
