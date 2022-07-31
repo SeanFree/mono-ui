@@ -23,7 +23,9 @@
   ],
   "author": "Sean Free",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "@material-design-icons/font": "^0.11.8"
+  },
   "devDependencies": {
     "@storybook/addon-a11y": "^6.5.9",
     "@storybook/addon-actions": "^6.5.9",
