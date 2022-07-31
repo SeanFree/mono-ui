@@ -1,0 +1,80 @@
+@import 'styles/color.scss', 'styles/layout.scss', 'styles/mixins.scss',
+  'styles/size.scss';
+
+.mono-select {
+  cursor: default;
+  position: relative;
+  user-select: none;
+
+  &__combobox,
+  &__option {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  &__combo-icon,
+  &__selected-icon {
+    display: inline-block;
+    color: $colorFont2;
+    margin-left: $size3;
+    pointer-events: none;
+  }
+
+  &__container {
+    position: relative;
+    width: 100%;
+  }
+
+  &__scroll-container {
+    background-color: $colorBackground3;
+    border-radius: $size1;
+    max-height: 120px;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: center top;
+    transition: opacity 0.2s, transform 0.2s;
+    transform: translateY(0);
+    width: 100%;
+    z-index: $zLayer2;
+
+    &:focus,
+    &:focus-within,
+    &--visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY($size1);
+    }
+  }
+
+  &--label-right &__container {
+    margin-right: $size3;
+  }
+
+  &__listbox {
+    font-size: $size5;
+    height: 100%;
+    margin: $size3 0;
+    padding: $size1 0;
+    user-select: none;
+    width: 100%;
+  }
+
+  &:focus-within &__combobox {
+    @include focusHighlight($size1, $colorHighlight0, 0.35);
+  }
+
+  &__option {
+    background-color: transparent;
+    padding: $size3 $size4;
+
+    &:hover,
+    &:focus {
+      background-color: $colorBackground5;
+      border: 0;
+      outline: 0;
+    }
+  }
+}
