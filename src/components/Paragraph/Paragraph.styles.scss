@@ -1,0 +1,28 @@
+@import 'styles/color.scss', 'styles/size.scss';
+
+.mono-paragraph {
+  font-size: $size6;
+  font-weight: 300;
+  margin-bottom: $size6;
+  text-shadow: 0 0 $size0 transparentize($colorBackground0, 0.15);
+
+  &--dropcap:first-letter {
+    color: $colorFont1;
+    float: left;
+    font-size: $size14;
+    font-weight: 400;
+    margin: 0 $size2 $size2 0;
+  }
+
+  &--indent-small {
+    text-indent: $size6;
+  }
+
+  &--indent-medium {
+    text-indent: $size9;
+  }
+
+  &--indent-large {
+    text-indent: $size12;
+  }
+}

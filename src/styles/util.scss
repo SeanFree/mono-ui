@@ -1,5 +1,16 @@
-/* ~** ---------------- **~ */
-/* ~** ---------------- **~ */
+.mono-glass {
+  &--light {
+    backdrop-filter: blur($size3);
+  }
+
+  &--medium {
+    backdrop-filter: blur($size6);
+  }
+
+  &--heavy {
+    backdrop-filter: blur($size10);
+  }
+}
 
 /*
 	Improved screen reader only CSS class

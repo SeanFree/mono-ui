@@ -2,7 +2,7 @@ import { ComponentStory } from '@storybook/react'
 import Heading from './Heading'
 
 export default {
-  title: 'Heading',
+  title: 'Typography/Heading',
   component: Heading,
 }
 

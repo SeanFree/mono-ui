@@ -42,7 +42,7 @@ const Button: FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      {...(ariaControls ? { 'aria-controls': ariaControls } : {})}
+      aria-controls={ariaControls}
       aria-label={ariaLabel}
       aria-disabled={disabled}
       disabled={disabled}
@@ -51,7 +51,7 @@ const Button: FC<ButtonProps> = ({
         [`mono-button--${size}`]: true,
         ['mono-button--inline']: inline,
         ['mono-button--disabled']: disabled,
-        ['mono-button--round']: round,
+        ['mono-button--round']: round && !inline,
         [`mono-button--${variant}`]: true,
         [className]: !!className,
       })}

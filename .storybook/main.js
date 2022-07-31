@@ -9,14 +9,13 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
+    '@storybook/addon-a11y',
     'storybook-dark-mode',
   ],
   framework: '@storybook/react',
-  staticDirs: ['../src/assets'],
   webpackFinal: async (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
-      // assets: path.join(srcDir, 'srcDir'),
       components: path.join(srcDir, 'components'),
       src: path.join(srcDir, 'src'),
       styles: path.join(srcDir, 'styles'),

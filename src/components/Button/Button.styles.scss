@@ -3,10 +3,9 @@
 
 .mono-button {
   align-items: center;
-  backdrop-filter: blur($size3);
   border-radius: $size2;
-  border: $size0 solid transparentize($colorBackground4, 0.25);
-  color: $colorFont5;
+  border: $size0 solid;
+  color: $colorFont6;
   cursor: pointer;
   display: flex;
   font-family: $fontFamily;
@@ -20,18 +19,9 @@
     @include focusHighlight($size0, $colorHighlight0, 0.35);
   }
 
-  &--inline {
-    display: inline-flex;
-    margin: 0 $size2;
-
-    .mono-icon {
-      margin-right: 0;
-    }
-  }
-
   &--small {
     font-size: $size5;
-    padding: $size2;
+    padding: $size2 $size5;
 
     &:active {
       transform: scale(0.9825);
@@ -40,7 +30,7 @@
 
   &--medium {
     font-size: $size6;
-    padding: $size3;
+    padding: $size3 $size6;
 
     &:active {
       transform: scale(0.98);
@@ -49,54 +39,58 @@
 
   &--large {
     font-size: $size7;
-    padding: $size4;
+    padding: $size4 $size7;
 
     &:active {
       transform: scale(0.975);
     }
   }
 
+  &--inline {
+    display: inline-flex;
+    margin: 0 $size2;
+    padding: 0;
+
+    .mono-icon {
+      margin-right: 0;
+    }
+  }
+
   &--round {
     &.mono-button--small {
       border-radius: $size5 + $size2;
-      padding-left: $size5;
-      padding-right: $size5;
     }
 
     &.mono-button--medium {
       border-radius: $size6 + $size3;
-      padding-left: $size6;
-      padding-right: $size6;
     }
 
     &.mono-button--large {
       border-radius: $size7 + $size4;
-      padding-left: $size7;
-      padding-right: $size7;
     }
   }
 
   &--fill {
-    background: transparentize($colorBackground4, 0.25);
-    border-color: transparentize($colorBackground4, 0.25);
+    background: $colorBackground4;
+    border-color: transparent;
 
     &:hover {
-      background: transparentize($colorBackground5, 0.25);
+      background: $colorBackground5;
     }
   }
 
   &--outline {
     background: transparent;
-    border: $size0 solid transparentize($colorBackground5, 0.25);
+    border-color: $colorBackground6;
 
     &:hover {
-      background: transparentize($colorBackground4, 0.25);
+      background: $colorBackground4;
     }
   }
 
   &--link {
     background: transparent;
-    border: $size0 solid transparent;
+    border-color: transparent;
     color: $colorFont2;
     text-decoration: underline;
     text-decoration-thickness: $size0;
@@ -115,10 +109,36 @@
 
   &--disabled {
     color: desaturate($colorFont1, 100%);
-    cursor: not-allowed;
+    pointer-events: none;
 
     &:hover {
       color: desaturate($colorFont1, 100%);
+    }
+
+    &:active {
+      transform: scale(1);
+    }
+
+    &.mono-button--fill {
+      background: desaturate($colorBackground4, 85%);
+      border-color: transparent;
+
+      &:hover {
+        background: desaturate($colorBackground5, 85%);
+      }
+    }
+
+    &.mono-button--outline {
+      background: transparent;
+      border-color: $colorBackground6;
+
+      &:hover {
+        background: transparent;
+      }
+    }
+
+    &.mono-button--link {
+      background: transparent;
     }
   }
 }

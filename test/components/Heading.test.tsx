@@ -1,6 +1,5 @@
 import { Container } from 'react-dom'
 import { render } from '@testing-library/react'
-
 import Heading, { HeadingProps } from 'components/Heading/Heading'
 
 describe('<Heading />', () => {
