@@ -130,7 +130,7 @@
 
     &.mono-button--outline {
       background: transparent;
-      border-color: $colorBackground6;
+      border-color: desaturate($colorBackground6, 85%);
 
       &:hover {
         background: transparent;

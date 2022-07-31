@@ -1,0 +1,146 @@
+@import 'styles/color.scss', 'styles/mixins.scss', 'styles/size.scss';
+
+.mono-checkbox {
+  display: flex;
+  position: relative;
+  width: auto;
+
+  &__input {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    margin: 0;
+  }
+
+  &__input:checked + &__label &__mark {
+    opacity: 1;
+  }
+
+  &__input:focus + &__label &__box,
+  &__label:active &__box {
+    @include focusHighlight($size1, $colorHighlight0, 0.35);
+  }
+
+  &__label {
+    align-items: center;
+    display: flex;
+    margin: 0;
+    width: auto;
+
+    &--top {
+      align-items: start;
+      flex-direction: column-reverse;
+
+      .mono-checkbox__label-text {
+        margin-bottom: $size3;
+      }
+    }
+
+    &--left {
+      flex-direction: row-reverse;
+
+      .mono-checkbox__label-text {
+        margin-right: $size3;
+      }
+    }
+
+    &--right {
+      flex-direction: row;
+
+      .mono-checkbox__box {
+        margin-right: $size3;
+      }
+    }
+  }
+
+  &__box {
+    background-color: $colorBackground5;
+    border-radius: $size1;
+    cursor: pointer;
+    display: inline-block;
+    padding: $size0;
+    position: relative;
+    height: $size9;
+    text-align: center;
+    margin: $size1 0;
+    width: $size9;
+  }
+
+  &__mark {
+    color: $colorHighlight0;
+    left: 50%;
+    opacity: 0;
+    position: relative;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--toggle &__box {
+    border-radius: 0.5 * $size9;
+    overflow: hidden;
+    padding: 0;
+    width: $size13;
+
+    &:before {
+      border-radius: 0.5 * $size9;
+      background-color: $colorBackground7;
+      content: '';
+      display: block;
+      height: $size9;
+      top: 0;
+      position: absolute;
+      transition: transform 0.2s;
+      transform: translateX(calc(-100% + #{$size9}));
+      width: $size13;
+    }
+
+    &:after {
+      background-color: $colorHighlight2;
+      border: 0;
+      border-radius: 50%;
+      content: '';
+      display: block;
+      height: $size9;
+      left: 0.5 * $size9;
+      pointer-events: none;
+      position: relative;
+      top: 0;
+      transform: translateX(-50%);
+      transition: transform 0.2s;
+      width: $size9;
+    }
+  }
+
+  &--toggle &__input:checked + &__label &__box {
+    &:before {
+      transform: translateX(0);
+    }
+
+    &:after {
+      opacity: 1;
+      background-color: $colorHighlight2;
+      transform: translateX($size5);
+    }
+  }
+
+  &--disabled {
+    pointer-events: none;
+  }
+
+  &--disabled &__box {
+    background-color: desaturate($colorBackground5, 85%);
+  }
+
+  &--disabled &__mark {
+    color: desaturate($colorHighlight0, 85%);
+  }
+
+  &--disabled#{&}--toggle &__box:before {
+    background-color: desaturate($colorBackground7, 85%) !important;
+    pointer-events: none;
+  }
+
+  &--disabled#{&}--toggle &__box:after {
+    background-color: desaturate($colorHighlight2, 85%) !important;
+  }
+}

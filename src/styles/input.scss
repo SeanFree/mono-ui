@@ -1,0 +1,62 @@
+@import './color.scss', './layout.scss', './mixins.scss', './size.scss';
+
+.mono-input {
+  padding: $size4 0;
+  display: flex;
+
+  &--label-top {
+    flex-direction: column;
+  }
+
+  &--label-right {
+    align-items: center;
+    flex-direction: row-reverse;
+  }
+
+  &--label-left {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  &__label {
+    font-size: $size5;
+    font-weight: 400;
+    display: block;
+    margin-bottom: $size3;
+
+    &--right {
+      margin-bottom: 0;
+    }
+
+    &--right {
+      flex: 1;
+      margin-right: 0;
+    }
+
+    &--left {
+      margin-bottom: 0;
+      margin-right: $size3;
+    }
+  }
+
+  &__input {
+    background: $colorBackground5;
+    border: 0;
+    border-radius: $size1;
+    color: $colorHighlight3;
+    display: block;
+    height: $size11;
+    font-family: 'Fira Code', monospace;
+    font-size: $size6;
+    padding: $size0 $size3;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    -moz-appearance: textfield;
+    z-index: $zLayer0;
+
+    &:focus {
+      @include focusHighlight($size1, $colorHighlight0, 0.35);
+    }
+  }
+}

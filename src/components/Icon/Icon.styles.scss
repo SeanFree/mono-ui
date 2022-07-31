@@ -1,0 +1,21 @@
+@import '~@material-design-icons/font/filled.css';
+@import 'styles/size.scss';
+
+$iconSizes: (
+  'xsmall': $size6,
+  'small': $size7,
+  'medium': $size8,
+  'large': $size10,
+  'xlarge': $size12,
+);
+
+.mono-icon {
+  display: inline-block;
+  user-select: none;
+
+  @each $iconSize, $fontSize in $iconSizes {
+    &--#{$iconSize} {
+      font-size: $fontSize;
+    }
+  }
+}

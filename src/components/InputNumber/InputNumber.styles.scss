@@ -1,0 +1,67 @@
+@import 'styles/layout.scss', 'styles/size.scss';
+
+.mono-number {
+  &--label-right &__container {
+    margin-right: $size3;
+  }
+
+  &--label-left &__container {
+    flex: 1;
+  }
+
+  &__label {
+    display: inline-block;
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__input {
+    padding: $size0 $size10;
+    text-align: center;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  &__button {
+    align-items: center;
+    backdrop-filter: unset;
+    border-radius: $size0;
+    display: flex;
+    height: $size9;
+    margin: 0;
+    padding-right: $size2;
+    outline: 0;
+    padding: 0;
+    position: absolute;
+    text-decoration: none;
+    text-align: center;
+    width: $size9;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: $zLayer1;
+
+    &:active {
+      transform: translateY(-50%) scale(0.975);
+    }
+
+    &--left {
+      left: $size1;
+    }
+
+    &--right {
+      right: $size1;
+    }
+
+    .mono-icon {
+      font-weight: 600;
+      margin: 0;
+      width: 100%;
+    }
+  }
+}
