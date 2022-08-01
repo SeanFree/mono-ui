@@ -1,23 +1,28 @@
-import { FC } from 'react'
+import { FC, useMemo } from 'react'
 import { classNames } from 'utils'
 import IconButton, { IconButtonProps } from 'components/IconButton/IconButton'
 
-export type PlayButtonProps = IconButtonProps & {
+export type SeekButtonProps = IconButtonProps & {
   ariaLabel?: string
-  isPlaying?: boolean
+  direction?: 'forward' | 'backward'
 }
 
-const PlayButton: FC<PlayButtonProps> = ({
+const SeekButton: FC<SeekButtonProps> = ({
   ariaLabel = '',
   className = '',
-  isPlaying = false,
-  size = 'medium',
+  direction = 'forward',
+  size = 'small',
   ...props
 }) => {
+  const actionName = useMemo(
+    () => (direction === 'forward' ? 'forward' : 'rewind'),
+    [direction]
+  )
+
   return (
     <IconButton
       className={classNames({
-        'mono-play-button': true,
+        'mono-seek-button': true,
         'mono-media-button': true,
         'mono-media-button--round': true,
         [`mono-media-button--${size}`]: true,
@@ -25,12 +30,12 @@ const PlayButton: FC<PlayButtonProps> = ({
       })}
       {...{
         ...props,
-        ariaLabel: ariaLabel || (isPlaying ? 'Pause' : 'Play'),
-        iconName: isPlaying ? 'pause' : 'play_arrow',
+        ariaLabel: ariaLabel || `Fast ${actionName}`,
+        iconName: `fast_${actionName}`,
         size,
       }}
     />
   )
 }
 
-export default PlayButton
+export default SeekButton
