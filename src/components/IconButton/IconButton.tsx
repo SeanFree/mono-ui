@@ -37,7 +37,11 @@ const IconButton: FC<IconButtonProps> = ({
         name={iconName}
         size={btnSizeToIconSize[size] as IconProps['size']}
       />
-      <span className="mono-icon-button__content">{children}</span>
+      {children ? (
+        <span className="mono-icon-button__content">{children}</span>
+      ) : (
+        <></>
+      )}
     </Button>
   )
 }

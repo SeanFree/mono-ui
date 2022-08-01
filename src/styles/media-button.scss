@@ -1,0 +1,15 @@
+@import 'styles/size.scss';
+
+.mono-media-button {
+  &#{&}--small {
+    padding: $size2;
+  }
+
+  &#{&}--medium {
+    padding: $size3;
+  }
+
+  &#{&}--large {
+    padding: $size4;
+  }
+}
