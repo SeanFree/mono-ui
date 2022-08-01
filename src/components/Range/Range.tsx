@@ -12,7 +12,7 @@ import { clamp, classNames, nearestMultiple, noop, norm } from 'utils'
 
 import './Range.styles.scss'
 
-type GetValueTextFunc = (value: number, name?: string) => number | string
+export type GetValueTextFunc = (value: number, name?: string) => number | string
 
 export type RangeProps = {
   ariaLabel: string

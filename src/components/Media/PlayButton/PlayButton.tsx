@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { classNames } from 'utils'
 import IconButton, { IconButtonProps } from 'components/IconButton/IconButton'
 
-export type PlayButtonProps = IconButtonProps & {
+export type PlayButtonProps = Omit<IconButtonProps, 'ariaLabel'> & {
   ariaLabel?: string
   isPlaying?: boolean
 }

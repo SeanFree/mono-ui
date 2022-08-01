@@ -2,7 +2,7 @@ import { FC, useMemo } from 'react'
 import { classNames } from 'utils'
 import IconButton, { IconButtonProps } from 'components/IconButton/IconButton'
 
-export type SkipButtonProps = IconButtonProps & {
+export type SkipButtonProps = Omit<IconButtonProps, 'ariaLabel'> & {
   ariaLabel?: string
   direction?: 'forward' | 'backward'
 }
