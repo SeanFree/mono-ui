@@ -3,29 +3,15 @@ import {
   FC,
   FocusEvent,
   KeyboardEvent,
-  PropsWithChildren,
   useCallback,
   useEffect,
   useMemo,
   useRef,
   useState,
 } from 'react'
-import { clamp, classNames, noop } from 'utils'
 import { IconButton } from 'components'
-
-export type InputNumberProps = PropsWithChildren<{
-  ariaLabel: string
-  className?: string
-  defaultValue?: number | string
-  disabled?: boolean
-  labelPosition?: 'top' | 'left' | 'right'
-  id: string
-  label: string
-  max?: number
-  min?: number
-  step?: number
-  onChange: Function
-}>
+import { InputNumberProps } from 'components/types'
+import { clamp, classNames, noop } from 'utils'
 
 const InputNumber: FC<InputNumberProps> = ({
   ariaLabel,

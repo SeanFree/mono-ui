@@ -1,13 +1,8 @@
-import { ElementType, FC, PropsWithChildren } from 'react'
+import { ElementType, FC } from 'react'
 import { classNames } from 'utils'
 
+import { HeadingProps } from './Heading.types'
 import './Heading.style.scss'
-
-export type HeadingProps = PropsWithChildren<{
-  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
-  className?: string
-  subText?: string
-}>
 
 const Heading: FC<HeadingProps> = ({
   as: tag = 'h6',

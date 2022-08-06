@@ -1,12 +1,8 @@
 import { FC } from 'react'
 import { classNames } from 'utils'
-import './Icon.styles.scss'
 
-export type IconProps = {
-  className?: string
-  name: string
-  size: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge'
-}
+import { IconProps } from './Icon.types'
+import './Icon.styles.scss'
 
 const Icon: FC<IconProps> = ({ className = '', name, size = 'medium' }) => {
   return (

@@ -1,14 +1,9 @@
-import { FC, PropsWithChildren } from 'react'
+import { FC } from 'react'
 import { classNames } from 'utils'
-import Button, { ButtonProps } from 'components/Button/Button'
-import Icon, { IconProps } from 'components/Icon/Icon'
-import './IconButton.styles.scss'
+import { Button, Icon } from 'components'
 
-export type IconButtonProps = PropsWithChildren<
-  ButtonProps & {
-    iconName?: IconProps['name']
-  }
->
+import { IconProps, IconButtonProps } from 'components/types'
+import './IconButton.styles.scss'
 
 const btnSizeToIconSize = {
   small: 'xsmall',

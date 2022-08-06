@@ -6,30 +6,16 @@ import {
   useMemo,
   useRef,
 } from 'react'
-import { ButtonProps } from 'components/Button/Button'
+import { ButtonProps } from 'components/types'
 import { PlayButton, Range, SkipButton, SeekButton } from 'components'
 import { clamp, classNames, hhmmss, noop } from 'utils'
-import './MediaControls.styles.scss'
 
-export type MediaControlsProps = {
-  buttonVariant?: ButtonProps['variant']
-  currentTime?: number | string
-  className?: string
-  isPlaying?: boolean
-  leftPane?: ReactNode
-  onPlay?: MouseEventHandler
-  onSeek?: Function
-  onSkip?: Function
-  onTimeSelect?: Function
-  rightPane?: ReactNode
-  roundButtons?: boolean
-  title?: string
-  artist?: string
-  totalTime?: number
-}
+import { MediaControlsProps } from './MediaControls.types'
+import './MediaControls.styles.scss'
 
 const MediaControls: FC<MediaControlsProps> = ({
   buttonVariant = 'fill' as ButtonProps['variant'],
+  compact = true,
   currentTime = 0,
   className = '',
   isPlaying = false,

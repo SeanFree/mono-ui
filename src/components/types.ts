@@ -1,0 +1,6 @@
+export * from './Button/Button.types'
+export * from './Checkbox/Checkbox.types'
+export * from './Heading/Heading.types'
+export * from './Icon/Icon.types'
+export * from './IconButton/IconButton.types'
+export * from './InputNumber/InputNumber.types'

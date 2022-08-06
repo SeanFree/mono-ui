@@ -1,11 +1,8 @@
+import { IconButton } from 'components'
+import { IconButtonProps } from 'components/types'
 import { FC, useMemo } from 'react'
+import { SkipButtonProps } from './SkipButton.types'
 import { classNames } from 'utils'
-import IconButton, { IconButtonProps } from 'components/IconButton/IconButton'
-
-export type SkipButtonProps = Omit<IconButtonProps, 'ariaLabel'> & {
-  ariaLabel?: string
-  direction?: 'forward' | 'backward'
-}
 
 const SkipButton: FC<SkipButtonProps> = ({
   ariaLabel = '',

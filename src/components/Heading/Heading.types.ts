@@ -1,0 +1,7 @@
+import { PropsWithChildren } from 'react'
+
+export type HeadingProps = PropsWithChildren<{
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+  className?: string
+  subText?: string
+}>

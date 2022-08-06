@@ -1,11 +1,8 @@
+import { IconButton } from 'components'
+import { IconButtonProps } from 'components/types'
 import { FC } from 'react'
+import { PlayButtonProps } from './PlayButton.types'
 import { classNames } from 'utils'
-import IconButton, { IconButtonProps } from 'components/IconButton/IconButton'
-
-export type PlayButtonProps = Omit<IconButtonProps, 'ariaLabel'> & {
-  ariaLabel?: string
-  isPlaying?: boolean
-}
 
 const PlayButton: FC<PlayButtonProps> = ({
   ariaLabel = '',

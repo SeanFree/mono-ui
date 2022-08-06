@@ -1,11 +1,7 @@
+import { IconButton } from 'components'
 import { FC, useMemo } from 'react'
+import { SeekButtonProps } from './SeekButton.types'
 import { classNames } from 'utils'
-import IconButton, { IconButtonProps } from 'components/IconButton/IconButton'
-
-export type SeekButtonProps = Omit<IconButtonProps, 'ariaLabel'> & {
-  ariaLabel?: string
-  direction?: 'forward' | 'backward'
-}
 
 const SeekButton: FC<SeekButtonProps> = ({
   ariaLabel = '',

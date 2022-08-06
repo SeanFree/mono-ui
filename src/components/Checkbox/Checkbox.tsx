@@ -1,23 +1,9 @@
 import { ChangeEvent, FC, useCallback, useState } from 'react'
 import { Icon } from 'components'
 import { classNames, noop } from 'utils'
+
+import { CheckboxProps } from './Checkbox.types'
 import './Checkbox.styles.scss'
-
-export type CheckboxChangeHandler = (checked: boolean, value: any) => any
-
-export type CheckboxProps = {
-  ariaLabel: string
-  className?: string
-  defaultChecked?: boolean
-  disabled?: boolean
-  id: string
-  isToggle?: boolean
-  label: string
-  labelPosition: 'top' | 'left' | 'right'
-  name?: string
-  onChange: CheckboxChangeHandler
-  value?: any
-}
 
 const Checkbox: FC<CheckboxProps> = ({
   ariaLabel,
