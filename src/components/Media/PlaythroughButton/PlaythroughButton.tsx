@@ -18,7 +18,6 @@ const PlaythroughButton: FC<PlaythroughButtonProps> = ({
 }) => {
   const [playthroughType, setPlaythroughType] = useState<number>(0)
 
-  console.log(playthroughTypes[playthroughType])
   return (
     <IconButton
       ariaLabel={`Change playthrough type to ${
