@@ -6,6 +6,7 @@ import {
 
 export type ButtonProps = PropsWithChildren<{
   ariaControls?: string
+  ariaExpanded?: boolean
   ariaLabel: string
   className?: string
   disabled?: boolean

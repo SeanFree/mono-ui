@@ -5,7 +5,7 @@
   align-items: center;
   border-radius: $size2;
   border: $size0 solid;
-  color: $colorFont6;
+  color: $colorFont7;
   cursor: pointer;
   display: flex;
   font-family: $fontFamily;
@@ -21,28 +21,16 @@
   &--small {
     font-size: $size5;
     padding: $size2 $size5;
-
-    &:active {
-      transform: scale(0.9825);
-    }
   }
 
   &--medium {
     font-size: $size6;
     padding: $size3 $size6;
-
-    &:active {
-      transform: scale(0.98);
-    }
   }
 
   &--large {
     font-size: $size7;
     padding: $size4 $size7;
-
-    &:active {
-      transform: scale(0.975);
-    }
   }
 
   &--inline {
@@ -112,10 +100,6 @@
 
     &:hover {
       color: desaturate($colorFont1, 100%);
-    }
-
-    &:active {
-      transform: scale(1);
     }
 
     &.mono-button--fill {

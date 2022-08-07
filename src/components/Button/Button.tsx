@@ -1,9 +1,4 @@
-import {
-  FC,
-  KeyboardEventHandler,
-  MouseEventHandler,
-  PropsWithChildren,
-} from 'react'
+import { FC } from 'react'
 import { classNames, noop } from 'utils'
 
 import { ButtonProps } from './Button.types'
@@ -11,6 +6,7 @@ import './Button.styles.scss'
 
 const Button: FC<ButtonProps> = ({
   ariaControls = '',
+  ariaExpanded = null,
   ariaLabel,
   children,
   className = '',
@@ -45,6 +41,11 @@ const Button: FC<ButtonProps> = ({
       onMouseDown={onMouseDown}
       onMouseLeave={onMouseLeave}
       onMouseUp={onMouseUp}
+      {...(ariaExpanded !== null
+        ? {
+            'aria-expanded': ariaExpanded,
+          }
+        : {})}
     >
       {children}
     </button>
