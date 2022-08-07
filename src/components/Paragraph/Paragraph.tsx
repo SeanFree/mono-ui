@@ -1,12 +1,7 @@
-import { FC, PropsWithChildren } from 'react'
+import { FC } from 'react'
+import { ParagraphProps } from './Paragraph.types'
 import { classNames } from 'utils'
 import './Paragraph.styles.scss'
-
-export type ParagraphProps = PropsWithChildren<{
-  className?: string
-  indent: 'off' | 'small' | 'medium' | 'large'
-  dropcap?: boolean
-}>
 
 const Paragraph: FC<ParagraphProps> = ({
   className = '',
