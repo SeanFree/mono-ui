@@ -1,0 +1,26 @@
+@import 'styles/color.scss', 'styles/size.scss';
+
+.mono-collapsible {
+  background-color: $colorBackground3;
+  border-radius: $size1;
+
+  &__toggle {
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  &__content {
+    overflow: hidden;
+  }
+
+  &__collapser {
+    margin-top: 0;
+    padding: $size7;
+    transition: opacity 0.2s, margin 0.3s;
+  }
+
+  &--collapsed &__collapser {
+    margin-top: -100%;
+    opacity: 0;
+  }
+}
