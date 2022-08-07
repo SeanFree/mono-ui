@@ -46,10 +46,6 @@
     transform: translateY(-50%);
     z-index: $zLayer1;
 
-    &:active {
-      transform: translateY(-50%) scale(0.975);
-    }
-
     &--left {
       left: $size1;
     }
