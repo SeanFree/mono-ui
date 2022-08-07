@@ -1,4 +1,4 @@
-export const { max, min } = Math
+export const { max, min, random } = Math
 
 export const clamp = (n: number, mn: number, mx: number): number =>
   min(max(n, mn), mx)
@@ -43,3 +43,6 @@ export const classNames = (classConfig: ClassConfig | string[]) => {
 export const noop = (): void => {}
 
 export const nearestMultiple = (n: number, d: number): number => n - (n % d)
+
+export const uniqueId = (): string =>
+  (new Date().valueOf() + random()).toString(16)
