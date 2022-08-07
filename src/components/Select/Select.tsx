@@ -8,28 +8,10 @@ import {
   useRef,
   useState,
 } from 'react'
+import { SelectOption, SelectProps } from './Select.types'
 import { Icon } from 'components'
 import { clamp, classNames, noop } from 'utils'
 import './Select.styles.scss'
-
-export type SelectOption = {
-  label: string
-  value: any
-}
-
-export type SelectProps = {
-  ariaLabel?: string
-  className?: string
-  defaultValue?: any
-  disabled: boolean
-  id: string
-  label: string
-  labelPosition?: 'top' | 'left' | 'right'
-  name?: string
-  onChange: Function
-  options: (SelectOption | string)[]
-  placeholder?: string
-}
 
 const Select: FC<SelectProps> = ({
   ariaLabel = '',

@@ -8,32 +8,10 @@ import {
   useRef,
   useState,
 } from 'react'
+import { GetValueTextFunc, RangeProps } from './Range.types'
 import { clamp, classNames, nearestMultiple, noop, norm } from 'utils'
 
 import './Range.styles.scss'
-
-export type GetValueTextFunc = (value: number, name?: string) => number | string
-
-export type RangeProps = {
-  ariaLabel: string
-  className?: string
-  defaultValue?: number | string
-  disabled?: boolean
-  getMaxText?: GetValueTextFunc
-  getMinText?: GetValueTextFunc
-  getValueText?: GetValueTextFunc
-  hideLabel?: boolean
-  hideLimits?: boolean
-  id: string
-  label: string
-  labelPosition?: 'top' | 'left' | 'right'
-  max?: number
-  min?: number
-  name?: string
-  onChange?: Function
-  orientation?: 'horizontal' | 'vertical'
-  step?: number
-}
 
 const getValueTextDefault: GetValueTextFunc = (value) => value
 
