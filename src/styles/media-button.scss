@@ -1,6 +1,8 @@
-@import 'styles/size.scss';
+@import 'styles/color.scss', 'styles/size.scss';
 
 .mono-media-button {
+  color: $colorHighlight2 !important;
+
   &#{&}--small {
     padding: $size2;
   }

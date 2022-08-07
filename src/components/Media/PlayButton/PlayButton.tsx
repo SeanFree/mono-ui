@@ -13,6 +13,9 @@ const PlayButton: FC<PlayButtonProps> = ({
 }) => {
   return (
     <IconButton
+      ariaLabel={ariaLabel || (isPlaying ? 'Pause' : 'Play')}
+      iconName={isPlaying ? 'pause' : 'play_arrow'}
+      size={size}
       className={classNames({
         'mono-play-button': true,
         'mono-media-button': true,
@@ -20,12 +23,7 @@ const PlayButton: FC<PlayButtonProps> = ({
         [`mono-media-button--${size}`]: true,
         [className]: !!className,
       })}
-      {...{
-        ...props,
-        ariaLabel: ariaLabel || (isPlaying ? 'Pause' : 'Play'),
-        iconName: isPlaying ? 'pause' : 'play_arrow',
-        size,
-      }}
+      {...props}
     />
   )
 }

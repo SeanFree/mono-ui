@@ -18,6 +18,9 @@ const SkipButton: FC<SkipButtonProps> = ({
 
   return (
     <IconButton
+      ariaLabel={ariaLabel || `Skip ${actionName}`}
+      iconName={`skip_${actionName}`}
+      size={size}
       className={classNames({
         'mono-skip-button': true,
         'mono-media-button': true,
@@ -25,12 +28,7 @@ const SkipButton: FC<SkipButtonProps> = ({
         [`mono-media-button--${size}`]: true,
         [className]: !!className,
       })}
-      {...{
-        ...props,
-        ariaLabel: ariaLabel || `Skip ${actionName}`,
-        iconName: `skip_${actionName}`,
-        size,
-      }}
+      {...props}
     />
   )
 }

@@ -1,20 +1,59 @@
-@import 'styles/color.scss', 'styles/size.scss';
+@import 'styles/color.scss', 'styles/layout.scss', 'styles/size.scss';
 
 .mono-media-controls {
   background-color: $colorBackground3;
-  border-radius: $size2;
+  border-radius: 0 0 $size3 $size3;
+  top: 100px;
   display: inline-flex;
+  position: relative;
+  flex-wrap: wrap;
   margin: $size5;
-  width: auto;
+
+  &__artwork {
+    border-radius: $size1;
+    height: 5.5rem;
+    object-fit: contain;
+    width: 5.5rem;
+  }
+
+  &__header {
+    background-color: $colorBackground2;
+    padding: 0 $size5 $size4;
+    position: absolute;
+    transition: transform 0.3s;
+    transform: translateY(-$size7 - $size0);
+    width: 100%;
+
+    &--hidden {
+      transform: translateY(-100%);
+    }
+  }
+
+  &__heading {
+    position: relative;
+    z-index: $zLayer0;
+  }
+
+  &__toggle-info {
+    border-radius: $size2 $size2 0 0;
+    color: $colorHighlight2;
+    margin: 0 (-$size5);
+    position: relative;
+    width: calc(100% + 2 * $size5);
+    z-index: $zLayer2;
+  }
 
   &__menu {
     align-items: center;
+    border-radius: 0 0 $size3 $size3;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 0;
+    position: relative;
     padding: 0;
     list-style: none;
+    z-index: $zLayer1;
   }
 
   &__submenu {
@@ -32,6 +71,14 @@
   }
 
   &__controls {
+    background-image: linear-gradient(
+      to right,
+      transparentize($colorBackground2, 0.01) 0%,
+      transparentize($colorBackground3, 0.05) 50%,
+      transparentize($colorBackground2, 0.01) 100%
+    );
+    backdrop-filter: blur($size0);
+    border-radius: 0 0 $size2 $size2;
     margin-right: 0;
     padding: $size3 $size5;
   }

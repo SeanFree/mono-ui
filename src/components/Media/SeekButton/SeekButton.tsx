@@ -17,6 +17,9 @@ const SeekButton: FC<SeekButtonProps> = ({
 
   return (
     <IconButton
+      ariaLabel={ariaLabel || `Fast ${actionName}`}
+      iconName={`fast_${actionName}`}
+      size={size}
       className={classNames({
         'mono-seek-button': true,
         'mono-media-button': true,
@@ -24,12 +27,7 @@ const SeekButton: FC<SeekButtonProps> = ({
         [`mono-media-button--${size}`]: true,
         [className]: !!className,
       })}
-      {...{
-        ...props,
-        ariaLabel: ariaLabel || `Fast ${actionName}`,
-        iconName: `fast_${actionName}`,
-        size,
-      }}
+      {...props}
     />
   )
 }
